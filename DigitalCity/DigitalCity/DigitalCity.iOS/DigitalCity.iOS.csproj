@@ -147,12 +147,14 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
+    <PackageReference Include="Xamarin.Forms">
+      <Version>3.0.0.550146</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\DigitalCity\DigitalCity.csproj">
-      <Project>{1E3E41F0-A328-43F9-AB7C-68453B6A7E9E}</Project>
+      <Project>{6805F1B2-ED85-461C-8368-130010C4AD2E}</Project>
       <Name>DigitalCity</Name>
     </ProjectReference>
   </ItemGroup>

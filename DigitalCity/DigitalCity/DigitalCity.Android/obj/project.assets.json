@@ -313,7 +313,7 @@
           "build/MonoAndroid81/Xamarin.Android.Support.Vector.Drawable.targets": {}
         }
       },
-      "Xamarin.Forms/3.0.0.482510": {
+      "Xamarin.Forms/3.0.0.550146": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Support.Design": "25.4.0.2",
@@ -345,7 +345,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "3.0.0.482510"
+          "Xamarin.Forms": "3.0.0.550146"
         },
         "compile": {
           "bin/placeholder/DigitalCity.dll": {}
@@ -593,11 +593,12 @@
         "xamarin.android.support.vector.drawable.nuspec"
       ]
     },
-    "Xamarin.Forms/3.0.0.482510": {
-      "sha512": "kq209d8qVvulrY3o+nGirENZ3kaZpEN7VWRErWcW1M+ahtDgm4BUXQJ5s9hnp1SAGxQMTMhDAVI3uk5g9NV7hA==",
+    "Xamarin.Forms/3.0.0.550146": {
+      "sha512": "SgkHey7csDf5Xi6rxqt5fMug6faeNMq9JZLFzLHFWLErCTx9RRhSSV8fZeqpfRqsmQVHGwvCTOrzEJ2aaNkGeg==",
       "type": "package",
-      "path": "xamarin.forms/3.0.0.482510",
+      "path": "xamarin.forms/3.0.0.550146",
       "files": [
+        ".signature.p7s",
         "build/netstandard1.0/Mono.Cecil.Mdb.dll",
         "build/netstandard1.0/Mono.Cecil.Pdb.dll",
         "build/netstandard1.0/Mono.Cecil.Rocks.dll",
@@ -736,7 +737,7 @@
         "lib/uap10.0/Xamarin.Forms.Platform.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.0.0.482510.nupkg.sha512",
+        "xamarin.forms.3.0.0.550146.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -754,38 +755,35 @@
       "Xamarin.Android.Support.v7.AppCompat >= 27.0.2",
       "Xamarin.Android.Support.v7.CardView >= 27.0.2",
       "Xamarin.Android.Support.v7.MediaRouter >= 27.0.2",
-      "Xamarin.Forms >= 3.0.0.482510"
+      "Xamarin.Forms >= 3.0.0.550146"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\janpo\\.nuget\\packages\\": {}
+    "/Users/steffmac/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\digital-city\\DigitalCity\\DigitalCity\\DigitalCity.Android\\DigitalCity.Android.csproj",
+      "projectUniqueName": "/Users/steffmac/Projects/digital-city/DigitalCity/DigitalCity/DigitalCity.Android/DigitalCity.Android.csproj",
       "projectName": "DigitalCity.Android",
-      "projectPath": "D:\\GitHub\\digital-city\\DigitalCity\\DigitalCity\\DigitalCity.Android\\DigitalCity.Android.csproj",
-      "packagesPath": "C:\\Users\\janpo\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\digital-city\\DigitalCity\\DigitalCity\\DigitalCity.Android\\obj\\",
+      "projectPath": "/Users/steffmac/Projects/digital-city/DigitalCity/DigitalCity/DigitalCity.Android/DigitalCity.Android.csproj",
+      "packagesPath": "/Users/steffmac/.nuget/packages/",
+      "outputPath": "/Users/steffmac/Projects/digital-city/DigitalCity/DigitalCity/DigitalCity.Android/obj",
       "projectStyle": "PackageReference",
-      "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\janpo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/steffmac/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "monoandroid81"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "D:\\GitHub\\digital-city\\DigitalCity\\DigitalCity\\DigitalCity\\DigitalCity.csproj": {
-              "projectPath": "D:\\GitHub\\digital-city\\DigitalCity\\DigitalCity\\DigitalCity\\DigitalCity.csproj"
+            "/Users/steffmac/Projects/digital-city/DigitalCity/DigitalCity/DigitalCity/DigitalCity.csproj": {
+              "projectPath": "/Users/steffmac/Projects/digital-city/DigitalCity/DigitalCity/DigitalCity/DigitalCity.csproj"
             }
           }
         }
@@ -796,27 +794,27 @@
         "dependencies": {
           "Xamarin.Android.Support.Design": {
             "target": "Package",
-            "version": "[27.0.2, )"
-          },
-          "Xamarin.Android.Support.v4": {
-            "target": "Package",
-            "version": "[27.0.2, )"
+            "version": "27.0.2"
           },
           "Xamarin.Android.Support.v7.AppCompat": {
             "target": "Package",
-            "version": "[27.0.2, )"
+            "version": "27.0.2"
+          },
+          "Xamarin.Android.Support.v4": {
+            "target": "Package",
+            "version": "27.0.2"
           },
           "Xamarin.Android.Support.v7.CardView": {
             "target": "Package",
-            "version": "[27.0.2, )"
+            "version": "27.0.2"
           },
           "Xamarin.Android.Support.v7.MediaRouter": {
             "target": "Package",
-            "version": "[27.0.2, )"
+            "version": "27.0.2"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.0.0.482510, )"
+            "version": "3.0.0.550146"
           }
         }
       }
