@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using UserNotifications;
 
 namespace DigitalCity.iOS
 {
@@ -26,6 +27,15 @@ namespace DigitalCity.iOS
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+
         }
+
+            [Export("applicationDidBecomeActive:")]
+            public override void OnActivated(UIApplication application)
+            {
+                UNUserNotificationCenter.Current.RequestAuthorization(
+                UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound,
+                (approved, error) => { });
+            }
     }
 }

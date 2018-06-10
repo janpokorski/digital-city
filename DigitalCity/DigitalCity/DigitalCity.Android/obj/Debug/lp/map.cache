@@ -1,5 +1,12 @@
 DigitalCity
 FormsViewGroup
+Plugin.CurrentActivity
+Plugin.Geolocator.Abstractions
+Plugin.Geolocator
+Plugin.LocalNotifications.Abstractions
+Plugin.LocalNotifications
+Plugin.Permissions.Abstractions
+Plugin.Permissions
 System.Runtime
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Lifecycle.Common
@@ -24,4 +31,8 @@ Xamarin.Forms.Core
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
+Xamarin.GooglePlayServices.Base
+Xamarin.GooglePlayServices.Basement
+Xamarin.GooglePlayServices.Location
+Xamarin.GooglePlayServices.Tasks
 netstandard

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Net;
+using Plugin.Geolocator;
+using Plugin.LocalNotifications;
 
 namespace DigitalCity
 {
@@ -13,15 +15,20 @@ namespace DigitalCity
 		public MainPage()
 		{
 			InitializeComponent();
+            DependencyService.Get<ILocationManager>().GetPermissions();
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new SettingPage();
+            Navigation.PushAsync(new SettingPage());
         }
 
         void Handle_Clicked_1(object sender, System.EventArgs e)
         {
+            DependencyService.Get<ILocationManager>().StartLocationUpdates();
+            DependencyService.Get<ILocationManager>().LocationUpdated += LocationUpdateHandler;
+
+
             var address = inputEntry.Text;
 
             switch(Device.RuntimePlatform)
@@ -31,6 +38,19 @@ namespace DigitalCity
                 case Device.Android: Device.OpenUri(new Uri(string.Format("geo:0,0?q={0}", WebUtility.UrlEncode(address))));
                     break;
             }
+
+
+        }
+
+        void LocationUpdateHandler(object sender, LocationEventArgs e)
+        {
+            if(e == null)
+            {
+                CrossLocalNotifications.Current.Show("Warning", "Location service is not available");
+                return;
+            }
+            CrossLocalNotifications.Current.Show("Test", string.Format("{0}, {1}", e.Latitude, e.Longitude));
+
         }
 	}
 }

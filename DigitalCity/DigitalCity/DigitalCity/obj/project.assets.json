@@ -26,6 +26,31 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Xam.Plugin.Geolocator/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Plugin.Geolocator.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.Geolocator.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Geolocator.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.Geolocator.dll": {}
+        }
+      },
+      "Xam.Plugins.Notifier/3.0.0-beta14": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.LocalNotifications.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.LocalNotifications.dll": {}
+        }
+      },
       "Xamarin.Forms/3.0.0.550146": {
         "type": "package",
         "compile": {
@@ -187,6 +212,80 @@
         "netstandard.library.nuspec"
       ]
     },
+    "Xam.Plugin.Geolocator/4.2.0": {
+      "sha512": "Erh2NDbVFSkJkGo09iMKs9Rjtgajra0BpZr1M3G45qTCNiNrxJlMZITU4RM+mJCtWH5m3KNL9v1SzE13FMFFbw==",
+      "type": "package",
+      "path": "xam.plugin.geolocator/4.2.0",
+      "files": [
+        "lib/MonoAndroid10/Plugin.Geolocator.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.Geolocator.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.Geolocator.dll",
+        "lib/MonoAndroid10/Plugin.Geolocator.pdb",
+        "lib/MonoAndroid10/Plugin.Geolocator.xml",
+        "lib/UAP10/Plugin.Geolocator.Abstractions.dll",
+        "lib/UAP10/Plugin.Geolocator.Abstractions.pdb",
+        "lib/UAP10/Plugin.Geolocator.XML",
+        "lib/UAP10/Plugin.Geolocator.dll",
+        "lib/UAP10/Plugin.Geolocator.pdb",
+        "lib/UAP10/Plugin.Geolocator.pri",
+        "lib/Xamarin.Mac20/Plugin.Geolocator.Abstractions.dll",
+        "lib/Xamarin.Mac20/Plugin.Geolocator.Abstractions.pdb",
+        "lib/Xamarin.Mac20/Plugin.Geolocator.dll",
+        "lib/Xamarin.Mac20/Plugin.Geolocator.pdb",
+        "lib/Xamarin.Mac20/Plugin.Geolocator.xml",
+        "lib/Xamarin.iOS10/Plugin.Geolocator.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.Geolocator.Abstractions.pdb",
+        "lib/Xamarin.iOS10/Plugin.Geolocator.dll",
+        "lib/Xamarin.iOS10/Plugin.Geolocator.pdb",
+        "lib/Xamarin.iOS10/Plugin.Geolocator.xml",
+        "lib/XamarinTVOS/Plugin.Geolocator.Abstractions.dll",
+        "lib/XamarinTVOS/Plugin.Geolocator.Abstractions.pdb",
+        "lib/XamarinTVOS/Plugin.Geolocator.dll",
+        "lib/XamarinTVOS/Plugin.Geolocator.pdb",
+        "lib/netstandard1.0/Plugin.Geolocator.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.Geolocator.Abstractions.pdb",
+        "lib/netstandard1.0/Plugin.Geolocator.deps.json",
+        "lib/netstandard1.0/Plugin.Geolocator.dll",
+        "lib/netstandard1.0/Plugin.Geolocator.pdb",
+        "lib/netstandard1.0/Plugin.Geolocator.xml",
+        "readme.txt",
+        "xam.plugin.geolocator.4.2.0.nupkg.sha512",
+        "xam.plugin.geolocator.nuspec"
+      ]
+    },
+    "Xam.Plugins.Notifier/3.0.0-beta14": {
+      "sha512": "/JVZK+Mtf3JgUt7QxRereq8wNGKjJF3Cs0vJuEKF4BTOwUm0GtKt1aurS78Mh2OQbxBUlSllnXbY1cBP6xIUyw==",
+      "type": "package",
+      "path": "xam.plugins.notifier/3.0.0-beta14",
+      "files": [
+        "lib/MonoAndroid10/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.XML",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.dll",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.pdb",
+        "lib/UAP10/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/UAP10/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/UAP10/Plugin.LocalNotifications.XML",
+        "lib/UAP10/Plugin.LocalNotifications.dll",
+        "lib/UAP10/Plugin.LocalNotifications.pdb",
+        "lib/UAP10/Plugin.LocalNotifications.pri",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.dll",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.xml",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.XML",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.dll",
+        "lib/netstandard1.0/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/netstandard1.0/Plugin.LocalNotifications.deps.json",
+        "lib/netstandard1.0/Plugin.LocalNotifications.dll",
+        "lib/netstandard1.0/Plugin.LocalNotifications.xml",
+        "xam.plugins.notifier.3.0.0-beta14.nupkg.sha512",
+        "xam.plugins.notifier.nuspec"
+      ]
+    },
     "Xamarin.Forms/3.0.0.550146": {
       "sha512": "SgkHey7csDf5Xi6rxqt5fMug6faeNMq9JZLFzLHFWLErCTx9RRhSSV8fZeqpfRqsmQVHGwvCTOrzEJ2aaNkGeg==",
       "type": "package",
@@ -339,6 +438,8 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.1",
+      "Xam.Plugin.Geolocator >= 4.2.0",
+      "Xam.Plugins.Notifier >= 3.0.0-beta14",
       "Xamarin.Forms >= 3.0.0.550146"
     ]
   },
@@ -390,6 +491,14 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "3.0.0.550146"
+          },
+          "Xam.Plugins.Notifier": {
+            "target": "Package",
+            "version": "3.0.0-beta14"
+          },
+          "Xam.Plugin.Geolocator": {
+            "target": "Package",
+            "version": "4.2.0"
           }
         },
         "imports": [
