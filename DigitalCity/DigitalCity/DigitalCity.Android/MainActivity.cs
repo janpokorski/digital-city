@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Plugin.CurrentActivity;
+using Xamarin.Forms;
 
 namespace DigitalCity.Droid
 {
@@ -28,7 +29,7 @@ namespace DigitalCity.Droid
 
         public override void OnBackPressed()
         {
-            Xamarin.Forms.Application.Current.MainPage = new MainPage();
+            Xamarin.Forms.Application.Current.MainPage = new NavigationPage(new MainPage());
         }
     }
 }

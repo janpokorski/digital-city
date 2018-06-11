@@ -1759,47 +1759,47 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x1
 			public const int cast_libraries_material_featurehighlight_text_header_color = 1;
 			
-			// aapt resource value: 0x7F040005
-			public const int colorAccent = 2130968581;
+			// aapt resource value: 0x7F050005
+			public const int colorAccent = 2131034117;
 			
-			// aapt resource value: 0x7F040003
-			public const int colorPrimary = 2130968579;
+			// aapt resource value: 0x7F050003
+			public const int colorPrimary = 2131034115;
 			
-			// aapt resource value: 0x7F040004
-			public const int colorPrimaryDark = 2130968580;
+			// aapt resource value: 0x7F050004
+			public const int colorPrimaryDark = 2131034116;
 			
-			// aapt resource value: 0x7F040105
-			public const int common_google_signin_btn_text_dark = 2130968837;
+			// aapt resource value: 0x7F050105
+			public const int common_google_signin_btn_text_dark = 2131034373;
 			
-			// aapt resource value: 0x7F040108
-			public const int common_google_signin_btn_text_dark_default = 2130968840;
+			// aapt resource value: 0x7F050108
+			public const int common_google_signin_btn_text_dark_default = 2131034376;
 			
-			// aapt resource value: 0x7F040109
-			public const int common_google_signin_btn_text_dark_disabled = 2130968841;
+			// aapt resource value: 0x7F050109
+			public const int common_google_signin_btn_text_dark_disabled = 2131034377;
 			
-			// aapt resource value: 0x7F040110
-			public const int common_google_signin_btn_text_dark_focused = 2130968848;
+			// aapt resource value: 0x7F050110
+			public const int common_google_signin_btn_text_dark_focused = 2131034384;
 			
-			// aapt resource value: 0x7F040111
-			public const int common_google_signin_btn_text_dark_pressed = 2130968849;
+			// aapt resource value: 0x7F050111
+			public const int common_google_signin_btn_text_dark_pressed = 2131034385;
 			
-			// aapt resource value: 0x7F040106
-			public const int common_google_signin_btn_text_light = 2130968838;
+			// aapt resource value: 0x7F050106
+			public const int common_google_signin_btn_text_light = 2131034374;
 			
-			// aapt resource value: 0x7F040112
-			public const int common_google_signin_btn_text_light_default = 2130968850;
+			// aapt resource value: 0x7F050112
+			public const int common_google_signin_btn_text_light_default = 2131034386;
 			
-			// aapt resource value: 0x7F040113
-			public const int common_google_signin_btn_text_light_disabled = 2130968851;
+			// aapt resource value: 0x7F050113
+			public const int common_google_signin_btn_text_light_disabled = 2131034387;
 			
-			// aapt resource value: 0x7F040114
-			public const int common_google_signin_btn_text_light_focused = 2130968852;
+			// aapt resource value: 0x7F050114
+			public const int common_google_signin_btn_text_light_focused = 2131034388;
 			
-			// aapt resource value: 0x7F040115
-			public const int common_google_signin_btn_text_light_pressed = 2130968853;
+			// aapt resource value: 0x7F050115
+			public const int common_google_signin_btn_text_light_pressed = 2131034389;
 			
-			// aapt resource value: 0x7F040107
-			public const int common_google_signin_btn_tint = 2130968839;
+			// aapt resource value: 0x7F050107
+			public const int common_google_signin_btn_tint = 2131034375;
 			
 			// aapt resource value: 0x7F060027
 			public const int design_bottom_navigation_shadow_color = 2131099687;
@@ -1861,8 +1861,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x7F06003A
 			public const int highlighted_text_material_light = 2131099706;
 			
-			// aapt resource value: 0x7F040002
-			public const int launcher_background = 2130968578;
+			// aapt resource value: 0x7F050002
+			public const int launcher_background = 2131034114;
 			
 			// aapt resource value: 0x7F06003B
 			public const int material_blue_grey_800 = 2131099707;
@@ -3084,62 +3084,62 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x1
 			public const int cast_skip_ad_label_border = 1;
 			
-			// aapt resource value: 0x7F060320
-			public const int common_full_open_on_phone = 2131100448;
+			// aapt resource value: 0x7F010321
+			public const int common_full_open_on_phone = 2130772769;
 			
-			// aapt resource value: 0x7F060306
-			public const int common_google_signin_btn_icon_dark = 2131100422;
+			// aapt resource value: 0x7F010307
+			public const int common_google_signin_btn_icon_dark = 2130772743;
 			
-			// aapt resource value: 0x7F060307
-			public const int common_google_signin_btn_icon_dark_focused = 2131100423;
+			// aapt resource value: 0x7F010308
+			public const int common_google_signin_btn_icon_dark_focused = 2130772744;
 			
-			// aapt resource value: 0x7F060308
-			public const int common_google_signin_btn_icon_dark_normal = 2131100424;
+			// aapt resource value: 0x7F010309
+			public const int common_google_signin_btn_icon_dark_normal = 2130772745;
 			
-			// aapt resource value: 0x7F060321
-			public const int common_google_signin_btn_icon_dark_normal_background = 2131100449;
+			// aapt resource value: 0x7F010322
+			public const int common_google_signin_btn_icon_dark_normal_background = 2130772770;
 			
-			// aapt resource value: 0x7F060309
-			public const int common_google_signin_btn_icon_disabled = 2131100425;
+			// aapt resource value: 0x7F010310
+			public const int common_google_signin_btn_icon_disabled = 2130772752;
 			
-			// aapt resource value: 0x7F060310
-			public const int common_google_signin_btn_icon_light = 2131100432;
+			// aapt resource value: 0x7F010311
+			public const int common_google_signin_btn_icon_light = 2130772753;
 			
-			// aapt resource value: 0x7F060311
-			public const int common_google_signin_btn_icon_light_focused = 2131100433;
+			// aapt resource value: 0x7F010312
+			public const int common_google_signin_btn_icon_light_focused = 2130772754;
 			
-			// aapt resource value: 0x7F060312
-			public const int common_google_signin_btn_icon_light_normal = 2131100434;
+			// aapt resource value: 0x7F010313
+			public const int common_google_signin_btn_icon_light_normal = 2130772755;
 			
-			// aapt resource value: 0x7F060322
-			public const int common_google_signin_btn_icon_light_normal_background = 2131100450;
+			// aapt resource value: 0x7F010323
+			public const int common_google_signin_btn_icon_light_normal_background = 2130772771;
 			
-			// aapt resource value: 0x7F060313
-			public const int common_google_signin_btn_text_dark = 2131100435;
+			// aapt resource value: 0x7F010314
+			public const int common_google_signin_btn_text_dark = 2130772756;
 			
-			// aapt resource value: 0x7F060314
-			public const int common_google_signin_btn_text_dark_focused = 2131100436;
+			// aapt resource value: 0x7F010315
+			public const int common_google_signin_btn_text_dark_focused = 2130772757;
 			
-			// aapt resource value: 0x7F060315
-			public const int common_google_signin_btn_text_dark_normal = 2131100437;
+			// aapt resource value: 0x7F010316
+			public const int common_google_signin_btn_text_dark_normal = 2130772758;
 			
-			// aapt resource value: 0x7F060323
-			public const int common_google_signin_btn_text_dark_normal_background = 2131100451;
+			// aapt resource value: 0x7F010324
+			public const int common_google_signin_btn_text_dark_normal_background = 2130772772;
 			
-			// aapt resource value: 0x7F060316
-			public const int common_google_signin_btn_text_disabled = 2131100438;
+			// aapt resource value: 0x7F010317
+			public const int common_google_signin_btn_text_disabled = 2130772759;
 			
-			// aapt resource value: 0x7F060317
-			public const int common_google_signin_btn_text_light = 2131100439;
+			// aapt resource value: 0x7F010318
+			public const int common_google_signin_btn_text_light = 2130772760;
 			
-			// aapt resource value: 0x7F060318
-			public const int common_google_signin_btn_text_light_focused = 2131100440;
+			// aapt resource value: 0x7F010319
+			public const int common_google_signin_btn_text_light_focused = 2130772761;
 			
-			// aapt resource value: 0x7F060319
-			public const int common_google_signin_btn_text_light_normal = 2131100441;
+			// aapt resource value: 0x7F010320
+			public const int common_google_signin_btn_text_light_normal = 2130772768;
 			
-			// aapt resource value: 0x7F060324
-			public const int common_google_signin_btn_text_light_normal_background = 2131100452;
+			// aapt resource value: 0x7F010325
+			public const int common_google_signin_btn_text_light_normal_background = 2130772773;
 			
 			// aapt resource value: 0x7F090056
 			public const int design_bottom_navigation_item_background = 2131296342;
@@ -3159,11 +3159,14 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x7F09005B
 			public const int design_snackbar_background = 2131296347;
 			
-			// aapt resource value: 0x7F060325
-			public const int googleg_disabled_color_18 = 2131100453;
+			// aapt resource value: 0x7F010326
+			public const int googleg_disabled_color_18 = 2130772774;
 			
-			// aapt resource value: 0x7F060326
-			public const int googleg_standard_color_18 = 2131100454;
+			// aapt resource value: 0x7F010327
+			public const int googleg_standard_color_18 = 2130772775;
+			
+			// aapt resource value: 0x7F010002
+			public const int icon_settings = 2130771970;
 			
 			// aapt resource value: 0x7F090054
 			public const int ic_audiotrack_dark = 2131296340;
@@ -3813,8 +3816,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x1
 			public const int places_ic_search = 1;
 			
-			// aapt resource value: 0x7F060002
-			public const int plugin_lc_smallicon = 2131099650;
+			// aapt resource value: 0x7F010003
+			public const int plugin_lc_smallicon = 2130771971;
 			
 			// aapt resource value: 0x1
 			public const int powered_by_google_dark = 1;
@@ -4027,11 +4030,11 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x7F0C0015
 			public const int add = 2131492885;
 			
-			// aapt resource value: 0x7F010176
-			public const int adjust_height = 2130772342;
+			// aapt resource value: 0x7F020176
+			public const int adjust_height = 2130837878;
 			
-			// aapt resource value: 0x7F010175
-			public const int adjust_width = 2130772341;
+			// aapt resource value: 0x7F020175
+			public const int adjust_width = 2130837877;
 			
 			// aapt resource value: 0x1
 			public const int ad_container = 1;
@@ -4060,8 +4063,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x1
 			public const int android_pay_light_with_border = 1;
 			
-			// aapt resource value: 0x7F010174
-			public const int app_name = 2130772340;
+			// aapt resource value: 0x7F020174
+			public const int app_name = 2130837876;
 			
 			// aapt resource value: 0x7F0C0006
 			public const int async = 2131492870;
@@ -4207,8 +4210,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x7F0C0024
 			public const int customPanel = 2131492900;
 			
-			// aapt resource value: 0x7F010180
-			public const int dark = 2130772352;
+			// aapt resource value: 0x7F020180
+			public const int dark = 2130837888;
 			
 			// aapt resource value: 0x1
 			public const int date = 1;
@@ -4315,8 +4318,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x7F0C000B
 			public const int icon_group = 2131492875;
 			
-			// aapt resource value: 0x7F010179
-			public const int icon_only = 2130772345;
+			// aapt resource value: 0x7F020179
+			public const int icon_only = 2130837881;
 			
 			// aapt resource value: 0x1
 			public const int icon_uri = 1;
@@ -4378,8 +4381,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x1
 			public const int license_list = 1;
 			
-			// aapt resource value: 0x7F010181
-			public const int light = 2130772353;
+			// aapt resource value: 0x7F020181
+			public const int light = 2130837889;
 			
 			// aapt resource value: 0x7F0C000E
 			public const int line1 = 2131492878;
@@ -4675,8 +4678,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x1
 			public const int slide = 1;
 			
-			// aapt resource value: 0x7F010002
-			public const int sliding_tabs = 2130771970;
+			// aapt resource value: 0x7F020002
+			public const int sliding_tabs = 2130837506;
 			
 			// aapt resource value: 0x7F0C006B
 			public const int smallLabel = 2131492971;
@@ -4702,8 +4705,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x7F0C0072
 			public const int src_over = 2131492978;
 			
-			// aapt resource value: 0x7F010177
-			public const int standard = 2130772343;
+			// aapt resource value: 0x7F020177
+			public const int standard = 2130837879;
 			
 			// aapt resource value: 0x7F0C0073
 			public const int start = 2131492979;
@@ -4792,8 +4795,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x1
 			public const int title_view = 1;
 			
-			// aapt resource value: 0x7F010003
-			public const int toolbar = 2130771971;
+			// aapt resource value: 0x7F020003
+			public const int toolbar = 2130837507;
 			
 			// aapt resource value: 0x7F0C0084
 			public const int top = 2131492996;
@@ -4837,8 +4840,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x7F0C007D
 			public const int volume_item_container = 2131492989;
 			
-			// aapt resource value: 0x7F010178
-			public const int wide = 2130772344;
+			// aapt resource value: 0x7F020178
+			public const int wide = 2130837880;
 			
 			// aapt resource value: 0x7F0C0090
 			public const int wrap_content = 2131493008;
@@ -5170,11 +5173,11 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x7F0F003B
 			public const int support_simple_spinner_dropdown_item = 2131689531;
 			
-			// aapt resource value: 0x7F020002
-			public const int Tabbar = 2130837506;
+			// aapt resource value: 0x7F030002
+			public const int Tabbar = 2130903042;
 			
-			// aapt resource value: 0x7F020003
-			public const int Toolbar = 2130837507;
+			// aapt resource value: 0x7F030003
+			public const int Toolbar = 2130903043;
 			
 			// aapt resource value: 0x7F0F003C
 			public const int tooltip = 2131689532;
@@ -5195,14 +5198,14 @@ namespace DigitalCity.Droid
 		public partial class Mipmap
 		{
 			
-			// aapt resource value: 0x7F030002
-			public const int icon = 2130903042;
+			// aapt resource value: 0x7F040002
+			public const int icon = 2130968578;
 			
-			// aapt resource value: 0x7F030003
-			public const int icon_round = 2130903043;
+			// aapt resource value: 0x7F040003
+			public const int icon_round = 2130968579;
 			
-			// aapt resource value: 0x7F030004
-			public const int launcher_foreground = 2130903044;
+			// aapt resource value: 0x7F040004
+			public const int launcher_foreground = 2130968580;
 			
 			static Mipmap()
 			{
@@ -5653,8 +5656,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x7F160006
 			public const int Animation_Design_BottomSheetDialog = 2132148230;
 			
-			// aapt resource value: 0x7F050004
-			public const int AppCompatDialogStyle = 2131034116;
+			// aapt resource value: 0x7F060004
+			public const int AppCompatDialogStyle = 2131099652;
 			
 			// aapt resource value: 0x7F160007
 			public const int Base_AlertDialog_AppCompat = 2132148231;
@@ -6169,11 +6172,11 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x1
 			public const int CustomCastTheme = 1;
 			
-			// aapt resource value: 0x7F050002
-			public const int MainTheme = 2131034114;
+			// aapt resource value: 0x7F060002
+			public const int MainTheme = 2131099650;
 			
-			// aapt resource value: 0x7F050003
-			public const int MainTheme_Base = 2131034115;
+			// aapt resource value: 0x7F060003
+			public const int MainTheme_Base = 2131099651;
 			
 			// aapt resource value: 0x7F1600AA
 			public const int Platform_AppCompat = 2132148394;

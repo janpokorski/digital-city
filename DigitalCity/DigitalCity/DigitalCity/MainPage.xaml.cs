@@ -15,6 +15,30 @@ namespace DigitalCity
 		public MainPage()
 		{
 			InitializeComponent();
+
+            ToolbarItem item = null;
+
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    item = new ToolbarItem
+                    {
+                        Text = "Settings",
+                        Order = ToolbarItemOrder.Primary
+                    };
+                    item.Clicked += Handle_Clicked;
+                    break;
+                case Device.Android:
+                    item = new ToolbarItem
+                    {
+                        Text = "Settings",
+                        Order = ToolbarItemOrder.Secondary
+                    };
+                    item.Clicked += Handle_Clicked;
+                    break;
+            }
+
+            this.ToolbarItems.Add(item);
             DependencyService.Get<ILocationManager>().GetPermissions();
         }
 

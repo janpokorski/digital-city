@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Always in usage</string>
+	<string>Location tracking is required in order to work</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>When in usage</string>
+	<string>Location tracking is required in order to work</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleExecutable</key>
