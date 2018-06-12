@@ -29,13 +29,5 @@ namespace DigitalCity.iOS
             return base.FinishedLaunching(app, options);
 
         }
-
-            [Export("applicationDidBecomeActive:")]
-            public override void OnActivated(UIApplication application)
-            {
-                UNUserNotificationCenter.Current.RequestAuthorization(
-                UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound,
-                (approved, error) => { });
-            }
     }
 }

@@ -39,7 +39,9 @@ namespace DigitalCity
             }
 
             this.ToolbarItems.Add(item);
+            DependencyService.Get<INotification>().GetPermissions();
             DependencyService.Get<ILocationManager>().GetPermissions();
+
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)
@@ -70,10 +72,10 @@ namespace DigitalCity
         {
             if(e == null)
             {
-                CrossLocalNotifications.Current.Show("Warning", "Location service is not available");
+                DependencyService.Get<INotification>().SetNotification("Test", "There is an issue with the location service");
                 return;
             }
-            CrossLocalNotifications.Current.Show("Test", string.Format("{0}, {1}", e.Latitude, e.Longitude));
+            DependencyService.Get<INotification>().SetNotification("Test", string.Format("{0}, {1}", e.Latitude, e.Longitude));
 
         }
 	}
