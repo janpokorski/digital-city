@@ -11,6 +11,7 @@ namespace DigitalCityDatastruct
         string RoadSensorname;
         string RoadSensornamespaceURI;
         string RoadSensoridentifier;
+        double roadSurfaceTemperature;
 
         double currentEnviromentTemperature;
         double deicerDensity;
