@@ -6,10 +6,25 @@
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.550146" />
     <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.0-beta14" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
       <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugins\" />
+    <Folder Include="Model\" />
+    <Folder Include="Model\Sensors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Model\RoadSensor.cs" />
+    <Compile Remove="Model\Notifications\TrafficJamNotification.cs" />
+    <Compile Remove="Model\Notifications\Notification.cs" />
+    <Compile Remove="Model\Notifications\PollutionNotification.cs" />
+    <Compile Remove="Model\Notifications\RoadConditionNotification.cs" />
+    <Compile Remove="Model\Notifications\TrafficLightNotification.cs" />
+    <Compile Remove="Model\Notifications\WeatherNotification.cs" />
   </ItemGroup>
 </Project>

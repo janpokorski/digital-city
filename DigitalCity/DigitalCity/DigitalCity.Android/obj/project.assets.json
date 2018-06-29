@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v8.1": {
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Plugin.CurrentActivity/2.1.0.4": {
         "type": "package",
         "frameworkAssemblies": [
@@ -14,34 +23,36 @@
           "lib/monoandroid44/Plugin.CurrentActivity.dll": {}
         }
       },
-      "Plugin.Permissions/2.2.1": {
+      "Plugin.Permissions/3.0.0.12": {
         "type": "package",
         "dependencies": {
-          "Plugin.CurrentActivity": "1.0.1",
+          "Plugin.CurrentActivity": "2.1.0.2",
           "Xamarin.Android.Support.Compat": "25.4.0.2",
           "Xamarin.Android.Support.Core.Utils": "25.4.0.2"
         },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
         "compile": {
-          "lib/MonoAndroid10/Plugin.Permissions.Abstractions.dll": {},
-          "lib/MonoAndroid10/Plugin.Permissions.dll": {}
+          "lib/monoandroid71/Plugin.Permissions.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid10/Plugin.Permissions.Abstractions.dll": {},
-          "lib/MonoAndroid10/Plugin.Permissions.dll": {}
+          "lib/monoandroid71/Plugin.Permissions.dll": {}
         }
       },
-      "Xam.Plugin.Geolocator/4.2.0": {
+      "Xam.Plugin.Geolocator/4.5.0.6": {
         "type": "package",
         "dependencies": {
-          "Plugin.Permissions": "2.2.1"
+          "Plugin.Permissions": "3.0.0.12"
         },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
         "compile": {
-          "lib/MonoAndroid10/Plugin.Geolocator.Abstractions.dll": {},
-          "lib/MonoAndroid10/Plugin.Geolocator.dll": {}
+          "lib/monoandroid71/Plugin.Geolocator.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid10/Plugin.Geolocator.Abstractions.dll": {},
-          "lib/MonoAndroid10/Plugin.Geolocator.dll": {}
+          "lib/monoandroid71/Plugin.Geolocator.dll": {}
         }
       },
       "Xam.Plugins.Notifier/3.0.0-beta14": {
@@ -376,7 +387,7 @@
           "build/Xamarin.Build.Download.targets": {}
         }
       },
-      "Xamarin.Forms/3.0.0.550146": {
+      "Xamarin.Forms/3.0.0.561731": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Support.Design": "25.4.0.2",
@@ -476,6 +487,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "11.0.2",
           "Xam.Plugin.Geolocator": "4.2.0",
           "Xam.Plugins.Notifier": "3.0.0-beta14",
           "Xamarin.Forms": "3.0.0.550146"
@@ -490,6 +502,34 @@
     }
   },
   "libraries": {
+    "Newtonsoft.Json/11.0.2": {
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "type": "package",
+      "path": "newtonsoft.json/11.0.2",
+      "files": [
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
     "Plugin.CurrentActivity/2.1.0.4": {
       "sha512": "m8xaXvXUzBSqP6xRe5PeIG347WxsG/VWrZta7MnPpSvNuPf0RLB/S49UCCQyBKSsfu053+apvYm14BC7GU6Zzg==",
       "type": "package",
@@ -502,79 +542,49 @@
         "readme.txt"
       ]
     },
-    "Plugin.Permissions/2.2.1": {
-      "sha512": "ixEdsOBokh6eIofokJmru0u18hZKUODkvJZeest0CsHiiuRcO38yiTr+2Nq6Pg9hm0fhyavFQydhbldfHOp44Q==",
+    "Plugin.Permissions/3.0.0.12": {
+      "sha512": "VrYqI/ufk3bH6gTP1JJlLByjhS0CHu3riKmdozhX9/qXA9hlvLolmcqKJdyAqpzmrVC74m3ZtirUBIrBxvT1Lw==",
       "type": "package",
-      "path": "plugin.permissions/2.2.1",
+      "path": "plugin.permissions/3.0.0.12",
       "files": [
-        "lib/MonoAndroid10/Plugin.Permissions.Abstractions.dll",
-        "lib/MonoAndroid10/Plugin.Permissions.Abstractions.pdb",
-        "lib/MonoAndroid10/Plugin.Permissions.Abstractions.xml",
-        "lib/MonoAndroid10/Plugin.Permissions.XML",
-        "lib/MonoAndroid10/Plugin.Permissions.dll",
-        "lib/MonoAndroid10/Plugin.Permissions.pdb",
-        "lib/UAP10/Plugin.Permissions.Abstractions.dll",
-        "lib/UAP10/Plugin.Permissions.Abstractions.pdb",
-        "lib/UAP10/Plugin.Permissions.Abstractions.xml",
-        "lib/UAP10/Plugin.Permissions.XML",
-        "lib/UAP10/Plugin.Permissions.dll",
-        "lib/UAP10/Plugin.Permissions.pdb",
-        "lib/UAP10/Plugin.Permissions.pri",
-        "lib/Xamarin.iOS10/Plugin.Permissions.Abstractions.dll",
-        "lib/Xamarin.iOS10/Plugin.Permissions.Abstractions.pdb",
-        "lib/Xamarin.iOS10/Plugin.Permissions.Abstractions.xml",
-        "lib/Xamarin.iOS10/Plugin.Permissions.XML",
-        "lib/Xamarin.iOS10/Plugin.Permissions.dll",
-        "lib/netstandard1.0/Plugin.Permissions.Abstractions.dll",
-        "lib/netstandard1.0/Plugin.Permissions.Abstractions.pdb",
-        "lib/netstandard1.0/Plugin.Permissions.Abstractions.xml",
-        "lib/netstandard1.0/Plugin.Permissions.deps.json",
+        "lib/monoandroid71/Plugin.Permissions.dll",
+        "lib/monoandroid71/Plugin.Permissions.xml",
         "lib/netstandard1.0/Plugin.Permissions.dll",
-        "lib/netstandard1.0/Plugin.Permissions.pdb",
         "lib/netstandard1.0/Plugin.Permissions.xml",
-        "plugin.permissions.2.2.1.nupkg.sha512",
+        "lib/netstandard2.0/Plugin.Permissions.dll",
+        "lib/netstandard2.0/Plugin.Permissions.xml",
+        "lib/uap10.0.10240/Plugin.Permissions.dll",
+        "lib/uap10.0.10240/Plugin.Permissions.pri",
+        "lib/uap10.0.10240/Plugin.Permissions.xml",
+        "lib/xamarinios10/Plugin.Permissions.dll",
+        "lib/xamarinios10/Plugin.Permissions.xml",
+        "plugin.permissions.3.0.0.12.nupkg.sha512",
         "plugin.permissions.nuspec",
         "readme.txt"
       ]
     },
-    "Xam.Plugin.Geolocator/4.2.0": {
-      "sha512": "Erh2NDbVFSkJkGo09iMKs9Rjtgajra0BpZr1M3G45qTCNiNrxJlMZITU4RM+mJCtWH5m3KNL9v1SzE13FMFFbw==",
+    "Xam.Plugin.Geolocator/4.5.0.6": {
+      "sha512": "Ro7peBDxsDXPc7J7yLx0ekAcXIfVTAXj/rXiBKiTgZ4Lm7KZJIU8PXOCcI4JztzT3MQrL8Rmka48il/ix0pwoA==",
       "type": "package",
-      "path": "xam.plugin.geolocator/4.2.0",
+      "path": "xam.plugin.geolocator/4.5.0.6",
       "files": [
-        "lib/MonoAndroid10/Plugin.Geolocator.Abstractions.dll",
-        "lib/MonoAndroid10/Plugin.Geolocator.Abstractions.pdb",
-        "lib/MonoAndroid10/Plugin.Geolocator.dll",
-        "lib/MonoAndroid10/Plugin.Geolocator.pdb",
-        "lib/MonoAndroid10/Plugin.Geolocator.xml",
-        "lib/UAP10/Plugin.Geolocator.Abstractions.dll",
-        "lib/UAP10/Plugin.Geolocator.Abstractions.pdb",
-        "lib/UAP10/Plugin.Geolocator.XML",
-        "lib/UAP10/Plugin.Geolocator.dll",
-        "lib/UAP10/Plugin.Geolocator.pdb",
-        "lib/UAP10/Plugin.Geolocator.pri",
-        "lib/Xamarin.Mac20/Plugin.Geolocator.Abstractions.dll",
-        "lib/Xamarin.Mac20/Plugin.Geolocator.Abstractions.pdb",
-        "lib/Xamarin.Mac20/Plugin.Geolocator.dll",
-        "lib/Xamarin.Mac20/Plugin.Geolocator.pdb",
-        "lib/Xamarin.Mac20/Plugin.Geolocator.xml",
-        "lib/Xamarin.iOS10/Plugin.Geolocator.Abstractions.dll",
-        "lib/Xamarin.iOS10/Plugin.Geolocator.Abstractions.pdb",
-        "lib/Xamarin.iOS10/Plugin.Geolocator.dll",
-        "lib/Xamarin.iOS10/Plugin.Geolocator.pdb",
-        "lib/Xamarin.iOS10/Plugin.Geolocator.xml",
-        "lib/XamarinTVOS/Plugin.Geolocator.Abstractions.dll",
-        "lib/XamarinTVOS/Plugin.Geolocator.Abstractions.pdb",
-        "lib/XamarinTVOS/Plugin.Geolocator.dll",
-        "lib/XamarinTVOS/Plugin.Geolocator.pdb",
-        "lib/netstandard1.0/Plugin.Geolocator.Abstractions.dll",
-        "lib/netstandard1.0/Plugin.Geolocator.Abstractions.pdb",
-        "lib/netstandard1.0/Plugin.Geolocator.deps.json",
+        "lib/monoandroid71/Plugin.Geolocator.dll",
+        "lib/monoandroid71/Plugin.Geolocator.xml",
         "lib/netstandard1.0/Plugin.Geolocator.dll",
-        "lib/netstandard1.0/Plugin.Geolocator.pdb",
         "lib/netstandard1.0/Plugin.Geolocator.xml",
+        "lib/netstandard2.0/Plugin.Geolocator.dll",
+        "lib/netstandard2.0/Plugin.Geolocator.xml",
+        "lib/uap10.0.10240/Plugin.Geolocator.dll",
+        "lib/uap10.0.10240/Plugin.Geolocator.pri",
+        "lib/uap10.0.10240/Plugin.Geolocator.xml",
+        "lib/xamarinios10/Plugin.Geolocator.dll",
+        "lib/xamarinios10/Plugin.Geolocator.xml",
+        "lib/xamarinmac20/Plugin.Geolocator.dll",
+        "lib/xamarinmac20/Plugin.Geolocator.xml",
+        "lib/xamarintvos10/Plugin.Geolocator.dll",
+        "lib/xamarintvos10/Plugin.Geolocator.xml",
         "readme.txt",
-        "xam.plugin.geolocator.4.2.0.nupkg.sha512",
+        "xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
         "xam.plugin.geolocator.nuspec"
       ]
     },
@@ -863,10 +873,10 @@
         "xamarin.build.download.nuspec"
       ]
     },
-    "Xamarin.Forms/3.0.0.550146": {
-      "sha512": "SgkHey7csDf5Xi6rxqt5fMug6faeNMq9JZLFzLHFWLErCTx9RRhSSV8fZeqpfRqsmQVHGwvCTOrzEJ2aaNkGeg==",
+    "Xamarin.Forms/3.0.0.561731": {
+      "sha512": "ZnpuSybty6uZsgInJQD2QoYsjsdzPmu25EltSNJTnwgiQCW0MVZfwU6//jbt4Sf0ZfAiryi8MZFhU1I0NAP6Ew==",
       "type": "package",
-      "path": "xamarin.forms/3.0.0.550146",
+      "path": "xamarin.forms/3.0.0.561731",
       "files": [
         ".signature.p7s",
         "build/netstandard1.0/Mono.Cecil.Mdb.dll",
@@ -1007,7 +1017,7 @@
         "lib/uap10.0/Xamarin.Forms.Platform.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.0.0.550146.nupkg.sha512",
+        "xamarin.forms.3.0.0.561731.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -1066,14 +1076,14 @@
     "MonoAndroid,Version=v8.1": [
       "DigitalCity >= 1.0.0",
       "Plugin.CurrentActivity >= 2.1.0.4",
-      "Xam.Plugin.Geolocator >= 4.2.0",
+      "Xam.Plugin.Geolocator >= 4.5.0.6",
       "Xam.Plugins.Notifier >= 3.0.0-beta14",
       "Xamarin.Android.Support.Design >= 27.0.2",
       "Xamarin.Android.Support.v4 >= 27.0.2",
       "Xamarin.Android.Support.v7.AppCompat >= 27.0.2",
       "Xamarin.Android.Support.v7.CardView >= 27.0.2",
       "Xamarin.Android.Support.v7.MediaRouter >= 27.0.2",
-      "Xamarin.Forms >= 3.0.0.550146",
+      "Xamarin.Forms >= 3.0.0.561731",
       "Xamarin.GooglePlayServices.Location >= 60.1142.1"
     ]
   },
@@ -1131,17 +1141,9 @@
             "target": "Package",
             "version": "27.0.2"
           },
-          "Xamarin.Forms": {
-            "target": "Package",
-            "version": "3.0.0.550146"
-          },
           "Xam.Plugins.Notifier": {
             "target": "Package",
             "version": "3.0.0-beta14"
-          },
-          "Xam.Plugin.Geolocator": {
-            "target": "Package",
-            "version": "4.2.0"
           },
           "Xamarin.GooglePlayServices.Location": {
             "target": "Package",
@@ -1150,6 +1152,14 @@
           "Plugin.CurrentActivity": {
             "target": "Package",
             "version": "2.1.0.4"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "3.0.0.561731"
+          },
+          "Xam.Plugin.Geolocator": {
+            "target": "Package",
+            "version": "4.5.0.6"
           }
         }
       }

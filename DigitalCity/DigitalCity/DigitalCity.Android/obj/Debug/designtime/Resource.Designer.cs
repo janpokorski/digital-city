@@ -3084,62 +3084,65 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x1
 			public const int cast_skip_ad_label_border = 1;
 			
-			// aapt resource value: 0x7F010322
-			public const int common_full_open_on_phone = 2130772770;
-			
-			// aapt resource value: 0x7F010308
-			public const int common_google_signin_btn_icon_dark = 2130772744;
-			
-			// aapt resource value: 0x7F010309
-			public const int common_google_signin_btn_icon_dark_focused = 2130772745;
-			
-			// aapt resource value: 0x7F010310
-			public const int common_google_signin_btn_icon_dark_normal = 2130772752;
-			
-			// aapt resource value: 0x7F010323
-			public const int common_google_signin_btn_icon_dark_normal_background = 2130772771;
-			
-			// aapt resource value: 0x7F010311
-			public const int common_google_signin_btn_icon_disabled = 2130772753;
-			
-			// aapt resource value: 0x7F010312
-			public const int common_google_signin_btn_icon_light = 2130772754;
-			
-			// aapt resource value: 0x7F010313
-			public const int common_google_signin_btn_icon_light_focused = 2130772755;
-			
-			// aapt resource value: 0x7F010314
-			public const int common_google_signin_btn_icon_light_normal = 2130772756;
-			
-			// aapt resource value: 0x7F010324
-			public const int common_google_signin_btn_icon_light_normal_background = 2130772772;
-			
-			// aapt resource value: 0x7F010315
-			public const int common_google_signin_btn_text_dark = 2130772757;
-			
-			// aapt resource value: 0x7F010316
-			public const int common_google_signin_btn_text_dark_focused = 2130772758;
-			
-			// aapt resource value: 0x7F010317
-			public const int common_google_signin_btn_text_dark_normal = 2130772759;
-			
-			// aapt resource value: 0x7F010325
-			public const int common_google_signin_btn_text_dark_normal_background = 2130772773;
-			
-			// aapt resource value: 0x7F010318
-			public const int common_google_signin_btn_text_disabled = 2130772760;
-			
-			// aapt resource value: 0x7F010319
-			public const int common_google_signin_btn_text_light = 2130772761;
-			
-			// aapt resource value: 0x7F010320
-			public const int common_google_signin_btn_text_light_focused = 2130772768;
-			
-			// aapt resource value: 0x7F010321
-			public const int common_google_signin_btn_text_light_normal = 2130772769;
+			// aapt resource value: 0x7F010003
+			public const int cloudy2 = 2130771971;
 			
 			// aapt resource value: 0x7F010326
-			public const int common_google_signin_btn_text_light_normal_background = 2130772774;
+			public const int common_full_open_on_phone = 2130772774;
+			
+			// aapt resource value: 0x7F010312
+			public const int common_google_signin_btn_icon_dark = 2130772754;
+			
+			// aapt resource value: 0x7F010313
+			public const int common_google_signin_btn_icon_dark_focused = 2130772755;
+			
+			// aapt resource value: 0x7F010314
+			public const int common_google_signin_btn_icon_dark_normal = 2130772756;
+			
+			// aapt resource value: 0x7F010327
+			public const int common_google_signin_btn_icon_dark_normal_background = 2130772775;
+			
+			// aapt resource value: 0x7F010315
+			public const int common_google_signin_btn_icon_disabled = 2130772757;
+			
+			// aapt resource value: 0x7F010316
+			public const int common_google_signin_btn_icon_light = 2130772758;
+			
+			// aapt resource value: 0x7F010317
+			public const int common_google_signin_btn_icon_light_focused = 2130772759;
+			
+			// aapt resource value: 0x7F010318
+			public const int common_google_signin_btn_icon_light_normal = 2130772760;
+			
+			// aapt resource value: 0x7F010328
+			public const int common_google_signin_btn_icon_light_normal_background = 2130772776;
+			
+			// aapt resource value: 0x7F010319
+			public const int common_google_signin_btn_text_dark = 2130772761;
+			
+			// aapt resource value: 0x7F010320
+			public const int common_google_signin_btn_text_dark_focused = 2130772768;
+			
+			// aapt resource value: 0x7F010321
+			public const int common_google_signin_btn_text_dark_normal = 2130772769;
+			
+			// aapt resource value: 0x7F010329
+			public const int common_google_signin_btn_text_dark_normal_background = 2130772777;
+			
+			// aapt resource value: 0x7F010322
+			public const int common_google_signin_btn_text_disabled = 2130772770;
+			
+			// aapt resource value: 0x7F010323
+			public const int common_google_signin_btn_text_light = 2130772771;
+			
+			// aapt resource value: 0x7F010324
+			public const int common_google_signin_btn_text_light_focused = 2130772772;
+			
+			// aapt resource value: 0x7F010325
+			public const int common_google_signin_btn_text_light_normal = 2130772773;
+			
+			// aapt resource value: 0x7F010330
+			public const int common_google_signin_btn_text_light_normal_background = 2130772784;
 			
 			// aapt resource value: 0x7F090056
 			public const int design_bottom_navigation_item_background = 2131296342;
@@ -3159,17 +3162,14 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x7F09005B
 			public const int design_snackbar_background = 2131296347;
 			
-			// aapt resource value: 0x7F010327
-			public const int googleg_disabled_color_18 = 2130772775;
+			// aapt resource value: 0x7F010331
+			public const int googleg_disabled_color_18 = 2130772785;
 			
-			// aapt resource value: 0x7F010328
-			public const int googleg_standard_color_18 = 2130772776;
+			// aapt resource value: 0x7F010332
+			public const int googleg_standard_color_18 = 2130772786;
 			
-			// aapt resource value: 0x7F010002
-			public const int Icon = 2130771970;
-			
-			// aapt resource value: 0x7F010003
-			public const int icon_settings = 2130771971;
+			// aapt resource value: 0x7F010004
+			public const int icon_settings = 2130771972;
 			
 			// aapt resource value: 0x7F090054
 			public const int ic_audiotrack_dark = 2131296340;
@@ -3798,6 +3798,9 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x7F090007
 			public const int notification_bg_normal_pressed = 2131296263;
 			
+			// aapt resource value: 0x7F010002
+			public const int Notification_Icon = 2130771970;
+			
 			// aapt resource value: 0x7F090008
 			public const int notification_icon_background = 2131296264;
 			
@@ -3819,8 +3822,8 @@ namespace DigitalCity.Droid
 			// aapt resource value: 0x1
 			public const int places_ic_search = 1;
 			
-			// aapt resource value: 0x7F010004
-			public const int plugin_lc_smallicon = 2130771972;
+			// aapt resource value: 0x7F010008
+			public const int plugin_lc_smallicon = 2130771976;
 			
 			// aapt resource value: 0x1
 			public const int powered_by_google_dark = 1;
@@ -3950,6 +3953,15 @@ namespace DigitalCity.Droid
 			
 			// aapt resource value: 0x1
 			public const int quantum_ic_volume_up_white_36 = 1;
+			
+			// aapt resource value: 0x7F010005
+			public const int shower3 = 2130771973;
+			
+			// aapt resource value: 0x7F010006
+			public const int snow4 = 2130771974;
+			
+			// aapt resource value: 0x7F010007
+			public const int sunny = 2130771975;
 			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;

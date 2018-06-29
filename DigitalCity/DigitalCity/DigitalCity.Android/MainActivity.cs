@@ -26,12 +26,6 @@ namespace DigitalCity.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }
-
-        public override void OnBackPressed()
-        {
-            base.OnBackPressed();
-            Xamarin.Forms.Application.Current.MainPage = new NavigationPage(new MainPage());
-        }
     }
 }
 

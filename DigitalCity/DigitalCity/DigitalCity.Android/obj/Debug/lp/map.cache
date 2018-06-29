@@ -1,11 +1,10 @@
 DigitalCity
 FormsViewGroup
+Newtonsoft.Json
 Plugin.CurrentActivity
-Plugin.Geolocator.Abstractions
 Plugin.Geolocator
 Plugin.LocalNotifications.Abstractions
 Plugin.LocalNotifications
-Plugin.Permissions.Abstractions
 Plugin.Permissions
 System.Runtime
 Xamarin.Android.Arch.Core.Common

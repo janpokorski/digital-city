@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DigitalCity.SettingPage" Title="DigitalCity">
     <ContentPage.Content>
-        <Grid VerticalOptions="Center" HorizontalOptions="Center" Padding="40" RowSpacing="20" ColumnSpacing="1">
+        <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="40" RowSpacing="50" ColumnSpacing="1">
             <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
@@ -16,6 +17,9 @@
             <Switch Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"></Switch>
             <Label Grid.Row="3" Grid.Column="0" Text="Show traffic jams" VerticalOptions="Center" HorizontalOptions="Center"></Label>
             <Switch Grid.Row="3" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"></Switch>
+            <Label Grid.Row="4" Grid.Column="0" Text="Show parking areas" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Switch Grid.Row="4" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"></Switch>
+            
             
         </Grid>
     </ContentPage.Content>
