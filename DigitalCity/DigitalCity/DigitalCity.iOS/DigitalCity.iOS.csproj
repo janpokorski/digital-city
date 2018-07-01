@@ -142,15 +142,33 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\sunny.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\sunny.imageset\sunny.png" />
-    <ImageAsset Include="Assets.xcassets\cloudy2.imageset\cloudy2.png" />
-    <ImageAsset Include="Assets.xcassets\cloudy2.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\shower3.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\shower3.imageset\shower3.png" />
-    <ImageAsset Include="Assets.xcassets\snow4.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\snow4.imageset\snow4.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\sunny.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\sunny.imageset\sunny.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\cloudy2.imageset\cloudy2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\cloudy2.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\shower3.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\shower3.imageset\shower3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\snow4.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\snow4.imageset\snow4.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
