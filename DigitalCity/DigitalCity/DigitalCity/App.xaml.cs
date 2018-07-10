@@ -11,7 +11,11 @@ namespace DigitalCity
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("#1c1c1c"),
+                BarTextColor = Color.FromHex("#39ff14")
+            };
 		}
 
 		protected override void OnStart ()

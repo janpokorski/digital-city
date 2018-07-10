@@ -29,11 +29,15 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>DigitalCity</string>
+	<string>Digital City</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.xamarin.digitalcity</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+  <key>UIStatusBarStyle</key>
+  <string>UIStatusBarStyleLightContent</string>
+  <key>UIViewControllerBasedStatusBarAppearance</key>
+  <false/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>

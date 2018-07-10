@@ -3,12 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DigitalCity"
              x:Class="DigitalCity.MainPage"
-             Title="DigitalCity">
+             BackgroundColor="#303030"
+             Title="Digital City">
 
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="40">
-        <Entry Placeholder="Destination" IsSpellCheckEnabled="false" x:Name="inputEntry"></Entry>
-           <Button Text="Start" Clicked="Handle_Clicked_1"></Button>
+    <AbsoluteLayout>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="20"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.5, 0.5" AbsoluteLayout.LayoutFlags="All">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="flag.png" Grid.Column="0"/>
+                <Entry Placeholder="Destination" IsSpellCheckEnabled="false" x:Name="inputEntry" Grid.Column="1"></Entry>
+            </Grid>
 
-    </StackLayout>
+            <Button Text="Start" Clicked="Handle_Clicked_1"></Button>
+
+        </StackLayout>
+    </AbsoluteLayout>
 
 </ContentPage>

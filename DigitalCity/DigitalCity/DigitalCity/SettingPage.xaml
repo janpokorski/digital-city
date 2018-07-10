@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DigitalCity.SettingPage" Title="DigitalCity">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="DigitalCity.SettingPage" 
+             BackgroundColor="#303030"
+             Title="Settings">
     <ContentPage.Content>
-        <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="40" RowSpacing="50" ColumnSpacing="1">
+        <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Padding="40" RowSpacing="50" ColumnSpacing="50">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
@@ -9,18 +13,20 @@
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
              </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Text="Show temperature" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="Show temperature" VerticalOptions="Center" HorizontalOptions="Start" TextColor="White"></Label>
             <Switch Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"></Switch>
-            <Label Grid.Row="1" Grid.Column="0" Text="Show pollution" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Label Grid.Row="1" Grid.Column="0" Text="Show pollution" VerticalOptions="Center" HorizontalOptions="Start" TextColor="White"></Label>
             <Switch Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"></Switch>
-            <Label Grid.Row="2" Grid.Column="0" Text="Show traffic lights" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Label Grid.Row="2" Grid.Column="0" Text="Show traffic lights" VerticalOptions="Center" HorizontalOptions="Start" TextColor="White"></Label>
             <Switch Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"></Switch>
-            <Label Grid.Row="3" Grid.Column="0" Text="Show traffic jams" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Label Grid.Row="3" Grid.Column="0" Text="Show traffic jams" VerticalOptions="Center" HorizontalOptions="Start" TextColor="White"></Label>
             <Switch Grid.Row="3" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"></Switch>
-            <Label Grid.Row="4" Grid.Column="0" Text="Show parking areas" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Label Grid.Row="4" Grid.Column="0" Text="Show parking areas" VerticalOptions="Center" HorizontalOptions="Start" TextColor="White"></Label>
             <Switch Grid.Row="4" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"></Switch>
-            
-            
         </Grid>
     </ContentPage.Content>
 </ContentPage>
