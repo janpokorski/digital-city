@@ -14,6 +14,9 @@ namespace DigitalCity
 {
 	public partial class MainPage : ContentPage
 	{
+        //set if debugging or not
+        private bool DEBUG_MODE = true;
+
         HttpClient client;
 
 		public MainPage()
@@ -78,7 +81,7 @@ namespace DigitalCity
         {
             if(e == null)
             {
-                DependencyService.Get<INotification>().SendDefaultNotification(999, "Warning", "There is an issue with the location service");
+                DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.Issue, "Warning", "There is an issue with the location service", 3));
                 return;
             }
 
@@ -99,8 +102,26 @@ namespace DigitalCity
             client.MaxResponseContentBufferSize = bufferSize;
         }
 
-        async void ProcessSensorData(LocationEventArgs args){
-            var response = await client.GetAsync(new Uri("http://mobiheaven.de/digital-city/index.php?latitude=1&longitude=2&radius=1"));
+        void ProcessSensorData(LocationEventArgs args){
+            ProcessRoadSensorData(args);
+            ProcessLaneSensorData(args);
+            ProcessLightSensorData(args);
+            ProcessEnvSensorData(args);
+        }
+
+        async void ProcessRoadSensorData(LocationEventArgs args)
+        {
+            string uri = "http://mobiheaven.de/digital-city/index.php?lat=" + args.Latitude.ToString().Replace(",", ".")
+                + "&long=" + args.Longitude.ToString().Replace(",", ".") + "&radius=";
+
+            if (DEBUG_MODE)
+                uri += "100000";
+            else
+                uri += "200";
+
+            uri += "&type=roadSensor";
+
+            var response = await client.GetAsync(new Uri(uri));
 
             if (response.IsSuccessStatusCode)
             {
@@ -109,13 +130,102 @@ namespace DigitalCity
 
                 Random random = new Random();
 
-                ProcessRoadSensor(collection.roadSensors[random.Next() % collection.roadSensors.Length], args);
-                ProcessTraficLaneSensor(collection.laneSensors[random.Next() % collection.laneSensors.Length], args);
-                ProcessTrafficLightSensor(collection.lightSensors[random.Next() % collection.lightSensors.Length], args);
-                ProcessEnvirontmentalSensor(collection.envSensors[random.Next() % collection.envSensors.Length], args);
+                if (collection.roadSensors.Length > 0)
+                    ProcessRoadSensor(collection.roadSensors[random.Next(collection.roadSensors.Length)], args);
             }
-            else{
-                DependencyService.Get<INotification>().SendDefaultNotification(999, "Warning", "There is an issue with the connection");
+            else
+            {
+                DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.Issue, "Warning", "There is an issue with the connection", 3));
+            }
+        }
+
+        async void ProcessLaneSensorData(LocationEventArgs args)
+        {
+            string uri = "http://mobiheaven.de/digital-city/index.php?lat=" + args.Latitude.ToString().Replace(",", ".")
+                + "&long=" + args.Longitude.ToString().Replace(",", ".") + "&radius=";
+
+            if (DEBUG_MODE)
+                uri += "100000";
+            else
+                uri += "500";
+
+            uri += "&type=laneSensor";
+
+            var response = await client.GetAsync(new Uri(uri));
+
+            if (response.IsSuccessStatusCode)
+            {
+                string body = await response.Content.ReadAsStringAsync();
+                var collection = JsonConvert.DeserializeObject<Model.SensorCollection>(body);
+
+                Random random = new Random();
+
+                if (collection.laneSensors.Length > 0)
+                    ProcessTraficLaneSensor(collection.laneSensors[random.Next(collection.laneSensors.Length)], args);
+            }
+            else
+            {
+                DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.Issue, "Warning", "There is an issue with the connection", 3));
+            }
+        }
+
+        async void ProcessLightSensorData(LocationEventArgs args)
+        {
+            string uri = "http://mobiheaven.de/digital-city/index.php?lat=" + args.Latitude.ToString().Replace(",", ".")
+                + "&long=" + args.Longitude.ToString().Replace(",", ".") + "&radius=";
+
+            if (DEBUG_MODE)
+                uri += "100000";
+            else
+                uri += "300";
+
+            uri += "&type=lightSensor";
+
+            var response = await client.GetAsync(new Uri(uri));
+
+            if (response.IsSuccessStatusCode)
+            {
+                string body = await response.Content.ReadAsStringAsync();
+                var collection = JsonConvert.DeserializeObject<Model.SensorCollection>(body);
+
+                Random random = new Random();
+
+                if (collection.lightSensors.Length > 0)
+                    ProcessTrafficLightSensor(collection.lightSensors[random.Next(collection.lightSensors.Length)], args);
+            }
+            else
+            {
+                DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.Issue, "Warning", "There is an issue with the connection", 3));
+            }
+        }
+
+        async void ProcessEnvSensorData(LocationEventArgs args)
+        {
+            string uri = "http://mobiheaven.de/digital-city/index.php?lat=" + args.Latitude.ToString().Replace(",", ".")
+                + "&long=" + args.Longitude.ToString().Replace(",", ".") + "&radius=";
+
+            if (DEBUG_MODE)
+                uri += "100000";
+            else
+                uri += "1000";
+
+            uri += "&type=envSensor";
+
+            var response = await client.GetAsync(new Uri(uri));
+
+            if (response.IsSuccessStatusCode)
+            {
+                string body = await response.Content.ReadAsStringAsync();
+                var collection = JsonConvert.DeserializeObject<Model.SensorCollection>(body);
+
+                Random random = new Random();
+
+                if (collection.envSensors.Length > 0)
+                    ProcessEnvirontmentalSensor(collection.envSensors[random.Next(collection.envSensors.Length)], args);
+            }
+            else
+            {
+                DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.Issue, "Warning", "There is an issue with the connection", 3));
             }
         }
 
@@ -123,11 +233,11 @@ namespace DigitalCity
             if (IsSensorInRange(sensor, args, 500))
             {
                 if (sensor.activeOxygen > 200)
-                    DependencyService.Get<INotification>().SendDefaultNotification((int)Model.Notification.Type.OxygenPollution, "Pollution warning", "Oxygen has exceeded the threshold of 200 ppm");
-                if(sensor.carbonMonoxidePPM > 200)
-                    DependencyService.Get<INotification>().SendDefaultNotification((int)Model.Notification.Type.OxygenPollution, "Pollution warning", "Carbon monoxide has exceeded the threshold of 200 ppm");
-                if(sensor.carbonDioxidePPM > 200)
-                    DependencyService.Get<INotification>().SendDefaultNotification((int)Model.Notification.Type.OxygenPollution, "Pollution warning", "Carbon dioxide has exceeded the threshold of 200 ppm");
+                    DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.OxygenPollution, "Pollution warning", "Oxygen has exceeded the threshold of 200 ppm", 1));
+                if (sensor.carbonMonoxidePPM > 200)
+                    DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.OxygenPollution, "Pollution warning", "Carbon monoxide has exceeded the threshold of 200 ppm", 3));
+                if (sensor.carbonDioxidePPM > 200)
+                    DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.OxygenPollution, "Pollution warning", "Carbon dioxide has exceeded the threshold of 200 ppm", 2));
             }
         }
 
@@ -138,19 +248,23 @@ namespace DigitalCity
 
                  string imagePath = null;
 
+                var notification = new Model.Notification(Model.Notification.Type.Weather, "Weather", content, imagePath, 0);
+
                  if (sensor.humidityLevel > 20.0)
                  {
-                    imagePath = "shower3";
+                    notification.imagePath = "shower3";
+                    notification.priority = 2;
                  }
                  else if(sensor.currentEnviromentTemperature > 20.0)
                  {
-                    imagePath = "sunny";
+                    notification.imagePath = "sunny";
                  }
                  else{
-                    imagePath = "cloudy2";
+                    notification.imagePath = "cloudy2";
+                    notification.priority = 1;
                  }
-
-                 DependencyService.Get<INotification>().SendCollapsedNotification((int)Model.Notification.Type.Weather, "Weather", content, imagePath);
+                 
+                 DependencyService.Get<INotification>().SendCollapsedNotification(notification);
 
             }
         }
@@ -158,19 +272,19 @@ namespace DigitalCity
         void ProcessTrafficLightSensor(Model.TrafficLightSensor sensor, LocationEventArgs args){
                 if (IsSensorInRange(sensor, args, 500)){
                     if(sensor.trafficLightState.Equals("red")){
-                        DependencyService.Get<INotification>().SendDefaultNotification((int)Model.Notification.Type.TrafficLight, "Traffic light", "Traffic light is red.");
-                    }
+                        DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.TrafficLight, "Traffic light", "Traffic light is red.", 1));
+                }
                     else if(sensor.trafficLightState.Equals("green")){
-                        DependencyService.Get<INotification>().SendDefaultNotification((int)Model.Notification.Type.TrafficLight, "Traffic light", "Traffic light is green.");
-                    }
+                    DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.TrafficLight, "Traffic light", "Traffic light is green.", 1));
+                }
                 }
         }
 
         void ProcessTraficLaneSensor(Model.TrafficLaneSensor sensor, LocationEventArgs args){
                 if (IsSensorInRange(sensor, args, 500)){
                     if(sensor.crossingsCounter5Minutes < 20 && sensor.averageSpeed < 40){
-                        DependencyService.Get<INotification>().SendDefaultNotification((int)Model.Notification.Type.TrafficJam, "Traffic jam", "There is a traffic jam ahead.");
-                    }
+                        DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.TrafficJam, "Traffic jam", "There is a traffic jam ahead.", 2));
+                }
                 }
         }
 

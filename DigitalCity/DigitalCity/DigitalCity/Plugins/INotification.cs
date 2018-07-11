@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DigitalCity.Model;
+using System;
 namespace DigitalCity
 {
 
@@ -6,8 +7,8 @@ namespace DigitalCity
     {
         
         void GetPermissions();
-        void SendDefaultNotification(int id, string title, string content);
-        void SendCollapsedNotification(int id, string title, string content, string image);
+        void SendDefaultNotification(Notification notification);
+        void SendCollapsedNotification(Notification notification);
         void DeleteNotification(int id);
     }
 }

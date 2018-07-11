@@ -35,23 +35,37 @@ namespace DigitalCity.Droid
             
         }
 
-        public void SendCollapsedNotification(int id, string title, string content, string image)
+        public void SendCollapsedNotification(DigitalCity.Model.Notification notification)
         {
+            var title = notification.title;
+            var content = notification.content;
+            var image = notification.imagePath;
+            var id = notification.GetId();
+
             Notification.Builder builder = CreateNotificationBuilder(title, content);
             int imageID = (int)typeof(Resource.Drawable).GetField(image).GetRawConstantValue();
             builder.SetLargeIcon(BitmapFactory.DecodeResource(CrossCurrentActivity.Current.Activity.Resources, imageID));
             PublishNotification(builder, id);
         }
 
-        public void SendDefaultNotification(int id, string title, string content)
+        public void SendDefaultNotification(DigitalCity.Model.Notification notification)
         {
+            var title = notification.title;
+            var content = notification.content;
+            var id = notification.GetId();
+
             Notification.Builder builder = CreateNotificationBuilder(title, content);
             PublishNotification(builder, id);
 
         }
 
-        public void SendExpandedNotification(int id, string title, string content, string image)
+        public void SendExpandedNotification(DigitalCity.Model.Notification notification)
         {
+            var title = notification.title;
+            var content = notification.content;
+            var image = notification.imagePath;
+            var id = notification.GetId();
+
             Notification.Builder builder = CreateNotificationBuilder(title, content);
             int imageID = (int)typeof(Resource.Drawable).GetField(image).GetRawConstantValue();
             builder.SetStyle(new Notification.BigPictureStyle().BigPicture(BitmapFactory.DecodeResource(CrossCurrentActivity.Current.Activity.Resources, imageID)));

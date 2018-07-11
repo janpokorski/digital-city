@@ -29,15 +29,25 @@ namespace DigitalCity.iOS
                 (approved, error) => { });
         }
 
-        public void SendCollapsedNotification(int id, string title, string content, string image)
+        public void SendCollapsedNotification(DigitalCity.Model.Notification notification)
         {
+            var title = notification.title;
+            var content = notification.content;
+            var image = notification.imagePath;
+            var id = notification.GetId();
+
             var UNContent = CreateContent(title, content);
             UNContent = AddImageAttachment(UNContent, image);
             PublishNotification(id, UNContent);
         }
 
-        public void SendDefaultNotification(int id, string title, string content)
+        public void SendDefaultNotification(DigitalCity.Model.Notification notification)
         {
+            var title = notification.title;
+            var content = notification.content;
+            var image = notification.imagePath;
+            var id = notification.GetId();
+
             var UNcontent = CreateContent(title, content);
             PublishNotification(id, UNcontent);
         }
