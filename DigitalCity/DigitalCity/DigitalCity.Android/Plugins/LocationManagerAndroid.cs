@@ -58,15 +58,7 @@ namespace DigitalCity.Droid
             {
                 // Check if there is a way the user can resolve the issue
                 var errorString = GoogleApiAvailability.Instance.GetErrorString(queryResult);
-
-                //Show alert
-                Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(CrossCurrentActivity.Current.AppContext);
-                alert.SetTitle("Warning");
-                alert.SetMessage(string.Format("There is a problem with Google Play Services on this device: {0} - {1}", queryResult, errorString));
-                alert.SetNeutralButton("Ok", delegate {
-                    alert.Dispose();
-                });
-                alert.Show();
+                Android.Widget.Toast.MakeText(CrossCurrentActivity.Current.AppContext, errorString, Android.Widget.ToastLength.Long).Show();
 
             }
         }
