@@ -68,7 +68,7 @@ namespace DigitalCity.Droid
         void ILocationManager.StartLocationUpdates()
         {
             client = LocationServices.GetFusedLocationProviderClient(CrossCurrentActivity.Current.Activity);
-            LocationRequest request = new LocationRequest().SetPriority(LocationRequest.PriorityHighAccuracy).SetInterval(500).SetFastestInterval(100);
+            LocationRequest request = new LocationRequest().SetPriority(LocationRequest.PriorityHighAccuracy).SetInterval(1000 * 5).SetFastestInterval(1000 * 2);
             locationCallback = new ClientLocationCallback(CrossCurrentActivity.Current.Activity);
             client.RequestLocationUpdatesAsync(request, locationCallback);
         }

@@ -15,14 +15,18 @@ namespace DigitalCity.Droid
         {
             
             //create head-up notification channel
-            string channelID = "Location-based information";
-            Java.Lang.ICharSequence channelName = new Java.Lang.String("Location-based information");
-            NotificationChannel channel = new NotificationChannel(channelID, channelName, NotificationImportance.Max);
+            if(Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+            {
+                string channelID = "Location-based information";
+                Java.Lang.ICharSequence channelName = new Java.Lang.String("Location-based information");
+                NotificationChannel channel = new NotificationChannel(channelID, channelName, NotificationImportance.Max);
 
-            //assign channel to the current manager
-            var context = CrossCurrentActivity.Current.AppContext.ApplicationContext;
-            manager = context.GetSystemService(Android.Content.Context.NotificationService) as NotificationManager;
-            manager.CreateNotificationChannel(channel);
+                //assign channel to the current manager
+                var context = CrossCurrentActivity.Current.AppContext.ApplicationContext;
+                manager = context.GetSystemService(Android.Content.Context.NotificationService) as NotificationManager;
+                manager.CreateNotificationChannel(channel);
+            }
+
         }
 
         public void DeleteNotification(int id)
@@ -73,7 +77,18 @@ namespace DigitalCity.Droid
         }
 
         public Notification.Builder CreateNotificationBuilder(string title, string content){
-            Notification.Builder builder = new Notification.Builder(CrossCurrentActivity.Current.Activity.ApplicationContext, "Location-based information");
+            Notification.Builder builder = null;
+
+            if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+            {
+                builder = new Notification.Builder(CrossCurrentActivity.Current.Activity.ApplicationContext, "Location-based information");
+            }
+            else
+            {
+                builder = new Notification.Builder(CrossCurrentActivity.Current.Activity.ApplicationContext, "Location-based information");
+                int priority = (int)NotificationPriority.High;
+                builder.SetPriority(priority);
+            }
             var context = CrossCurrentActivity.Current.AppContext;
             builder.SetContentTitle(title);
             builder.SetContentText(content);

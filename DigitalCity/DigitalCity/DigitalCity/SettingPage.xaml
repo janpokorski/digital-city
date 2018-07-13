@@ -18,13 +18,13 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Text="Show weather" VerticalOptions="Center" HorizontalOptions="Start" TextColor="White"></Label>
-            <Switch Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Toggled="toggled_weather" x:Name="weatherToggle"></Switch>
+            <Switch Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Toggled="Handle_Toggled" IsToggled="true" x:Name="weatherToggle"></Switch>
             <Label Grid.Row="1" Grid.Column="0" Text="Show pollution" VerticalOptions="Center" HorizontalOptions="Start" TextColor="White"></Label>
-            <Switch Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Toggled="toggled_pollution" x:Name="pollutionToggle"></Switch>
+            <Switch Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Toggled="Handle_Toggled_1" IsToggled="true" x:Name="pollutionToggle"></Switch>
             <Label Grid.Row="2" Grid.Column="0" Text="Show traffic lights" VerticalOptions="Center" HorizontalOptions="Start" TextColor="White"></Label>
-            <Switch Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Toggled="toggled_lights" x:Name="lightToggle"></Switch>
+            <Switch Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Toggled="Handle_Toggled_2" IsToggled="true" x:Name="lightToggle"></Switch>
             <Label Grid.Row="3" Grid.Column="0" Text="Show traffic jams" VerticalOptions="Center" HorizontalOptions="Start" TextColor="White"></Label>
-            <Switch Grid.Row="3" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Toggled="toggled_jams" x:Name="jamToggle"></Switch>
+            <Switch Grid.Row="3" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Toggled="Handle_Toggled_3" IsToggled="true" x:Name="jamToggle"></Switch>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
