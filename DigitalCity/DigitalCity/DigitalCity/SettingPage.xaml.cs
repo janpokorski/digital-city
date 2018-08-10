@@ -10,6 +10,7 @@ namespace DigitalCity
         public SettingPage()
         {
             InitializeComponent();
+
             weatherToggle.IsToggled = EnabledNotifications.weather;
             pollutionToggle.IsToggled = EnabledNotifications.pollution;
             lightToggle.IsToggled = EnabledNotifications.lights;
