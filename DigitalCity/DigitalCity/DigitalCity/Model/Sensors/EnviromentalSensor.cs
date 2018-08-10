@@ -1,6 +1,9 @@
 ﻿using System;
 namespace DigitalCity.Model
 {
+    /*
+     *  This is a representation of the environmental sensor from the backend
+     */
     public class EnviromentalSensor : Sensor
     {
         public string EnvironmentalSensorname;

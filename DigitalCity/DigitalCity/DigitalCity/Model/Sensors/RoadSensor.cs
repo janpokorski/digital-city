@@ -1,6 +1,9 @@
 ﻿using System;
 namespace DigitalCity.Model
 {
+    /*
+     *  This is a representation of the road sensor from the backend 
+     */
     public class RoadSensor : Sensor
     {
         public string RoadSensorname;

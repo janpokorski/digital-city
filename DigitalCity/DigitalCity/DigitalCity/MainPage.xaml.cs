@@ -13,11 +13,16 @@ using DigitalCity.Model;
 
 namespace DigitalCity
 {
+    /*
+     * Code-behind for the main page
+     * 
+     * Functions:
+     * - Retrieve data from the backend
+     * - Process the data
+     * - Display various notifications
+     */
 	public partial class MainPage : ContentPage
 	{
-        //set if debugging or not
-        private bool DEBUG_MODE = true;
-
         HttpClient client;
 
 		public MainPage()
@@ -26,6 +31,7 @@ namespace DigitalCity
 
             ToolbarItem item = null;
 
+            //Sets the toolbar buttonfor the settings page
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
@@ -47,25 +53,37 @@ namespace DigitalCity
             }
 
             this.ToolbarItems.Add(item);
-            DependencyService.Get<INotification>().GetPermissions();
-            DependencyService.Get<ILocationManager>().GetPermissions();
-            CreateHttpClient(50000);
 
+            //Asks for the permission for the notifications service
+            DependencyService.Get<INotification>().GetPermissions();
+            //Asks for the permission for the location service
+            DependencyService.Get<ILocationManager>().GetPermissions();
+
+            CreateHttpClient(50000);
         }
 
+        /*
+         *  When the toolbar button is tapped this function navigates the user to the setting page 
+         */
         void Handle_Clicked(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new SettingPage());
         }
 
+        /*
+         * When the start button is tapped this function opens the destination in a third party navigation app
+         * and starts the background location service
+         */
         void Handle_Clicked_1(object sender, System.EventArgs e)
         {
+            //Starts the background location service
             DependencyService.Get<ILocationManager>().StartLocationUpdates();
             DependencyService.Get<ILocationManager>().LocationUpdated += LocationUpdateHandler;
 
-
+            //Gets the destination
             var address = inputEntry.Text;
 
+            //Launches a third party navigation app with the destination as parameter
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
@@ -78,19 +96,25 @@ namespace DigitalCity
 
         }
 
+        /*
+         * This function is called every gps position update 
+         */
         void LocationUpdateHandler(object sender, LocationEventArgs e)
         {
+            //Error handling
             if(e == null)
             {
                 DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.Issue, "Warning", "There is an issue with the location service", 3));
                 return;
             }
 
+            //Android: Stops location service, retrieves sensor data form backend and starts the location service again
             if(Device.RuntimePlatform == Device.Android){
                 DependencyService.Get<ILocationManager>().StopLocationUpdates();
                 GetSensorData(e);
                 DependencyService.Get<ILocationManager>().StartLocationUpdates();
             }
+            //iOS: Retrieves sensord data from backend
             else if (Device.RuntimePlatform == Device.iOS){
                 GetSensorData(e);
             }
@@ -98,11 +122,17 @@ namespace DigitalCity
 
         }
 
+        /*
+         * Creates a new Http client with a custom max buffer size
+         */ 
         void CreateHttpClient(int bufferSize){
             client = new HttpClient();
             client.MaxResponseContentBufferSize = bufferSize;
         }
 
+        /*
+         * Retrieves sensor data from the backend for every supported sensor type
+         */
         void GetSensorData(LocationEventArgs args){
             GetRoadSensorData(args);
             GetLaneSensorData(args);
@@ -110,12 +140,18 @@ namespace DigitalCity
             GetEnvSensorData(args);
         }
 
-
+        /*
+         * Retrieves the road sensor data from the backend
+         * Radius: 200m
+         * Parameter: gps position
+         */
         async void GetRoadSensorData(LocationEventArgs args)
         {
+            //Enabled in settings?
             if (!EnabledNotifications.weather)
                 return;
             
+            //Backend script location
             string uri = "http://mobiheaven.de/digital-city/index.php?lat=" + args.Latitude.ToString().Replace(",", ".")
                 + "&long=" + args.Longitude.ToString().Replace(",", ".") + "&radius=";
             
@@ -128,24 +164,34 @@ namespace DigitalCity
             if (response.IsSuccessStatusCode)
             {
                 string body = await response.Content.ReadAsStringAsync();
+                //Converts the json object to a c# representation
                 var collection = JsonConvert.DeserializeObject<Model.SensorCollection>(body);
 
                 Random random = new Random();
 
+                //If any results then process a random sensor data
                 if (collection.roadSensors.Length > 0)
                     ProcessRoadSensor(collection.roadSensors[random.Next(collection.roadSensors.Length)], args);
             }
+            //Error handling
             else
             {
                 DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.Issue, "Warning", "There is an issue with the connection", 3));
             }
         }
 
+        /*
+         * Retrieves the lane sensor data from the backend
+         * Radius: 500m
+         * Parameter: gps position
+         */
         async void GetLaneSensorData(LocationEventArgs args)
         {
+            //Enabled in settings?
             if (!EnabledNotifications.jams)
                 return;
-            
+
+            //Backend script location
             string uri = "http://mobiheaven.de/digital-city/index.php?lat=" + args.Latitude.ToString().Replace(",", ".")
                 + "&long=" + args.Longitude.ToString().Replace(",", ".") + "&radius=";
 
@@ -158,24 +204,34 @@ namespace DigitalCity
             if (response.IsSuccessStatusCode)
             {
                 string body = await response.Content.ReadAsStringAsync();
+                //Converts the json object to a c# representation
                 var collection = JsonConvert.DeserializeObject<Model.SensorCollection>(body);
 
                 Random random = new Random();
 
+                //If any results then process a random sensor data
                 if (collection.laneSensors.Length > 0)
                     ProcessTraficLaneSensor(collection.laneSensors[random.Next(collection.laneSensors.Length)], args);
             }
+            //Error handling
             else
             {
                 DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.Issue, "Warning", "There is an issue with the connection", 3));
             }
         }
 
+        /*
+         * Retrieves the light sensor data from the backend
+         * Radius: 300m
+         * Parameter: gps position
+         */
         async void GetLightSensorData(LocationEventArgs args)
         {
+            //Enabled in settings?
             if (!EnabledNotifications.lights)
                 return;
 
+            //Backend script location
             string uri = "http://mobiheaven.de/digital-city/index.php?lat=" + args.Latitude.ToString().Replace(",", ".")
                 + "&long=" + args.Longitude.ToString().Replace(",", ".") + "&radius=";
             
@@ -188,24 +244,34 @@ namespace DigitalCity
             if (response.IsSuccessStatusCode)
             {
                 string body = await response.Content.ReadAsStringAsync();
+                //Converts the json object to a c# representation
                 var collection = JsonConvert.DeserializeObject<Model.SensorCollection>(body);
 
                 Random random = new Random();
 
+                //If any results then process a random sensor data
                 if (collection.lightSensors.Length > 0)
                     ProcessTrafficLightSensor(collection.lightSensors[random.Next(collection.lightSensors.Length)], args);
             }
+            //Error handling
             else
             {
                 DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.Issue, "Warning", "There is an issue with the connection", 3));
             }
         }
 
+        /*
+         * Retrieves the environmental sensor data from the backend
+         * Radius: 1000m
+         * Parameter: gps position
+         */
         async void GetEnvSensorData(LocationEventArgs args)
         {
-            if(!EnabledNotifications.pollution)
+            //Enabled in settings?
+            if (!EnabledNotifications.pollution)
                 return;
-            
+
+            //Backend script location
             string uri = "http://mobiheaven.de/digital-city/index.php?lat=" + args.Latitude.ToString().Replace(",", ".")
                 + "&long=" + args.Longitude.ToString().Replace(",", ".") + "&radius=";
             
@@ -218,19 +284,28 @@ namespace DigitalCity
             if (response.IsSuccessStatusCode)
             {
                 string body = await response.Content.ReadAsStringAsync();
+                //Converts the json object to a c# representation
                 var collection = JsonConvert.DeserializeObject<Model.SensorCollection>(body);
 
                 Random random = new Random();
 
+                //If any results then process a random sensor data
                 if (collection.envSensors.Length > 0)
                     ProcessEnvirontmentalSensor(collection.envSensors[random.Next(collection.envSensors.Length)], args);
             }
+            //Error handling
             else
             {
                 DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.Issue, "Warning", "There is an issue with the connection", 3));
             }
         }
 
+        /*
+         * Process environmental sensor data
+         * Active oxygen > 200ppm then warning (priority 1)
+         * Carbon monoxide > 200 ppm then alert (priority 3)
+         * Carbon dioxide > 200 ppm then warning (priority 2)
+         */
         void ProcessEnvirontmentalSensor(Model.EnviromentalSensor sensor, LocationEventArgs args){
              if (sensor.activeOxygen > 200)
                 DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.OxygenPollution, "Pollution warning", "Oxygen has exceeded the threshold of 200 ppm", 1));
@@ -240,7 +315,15 @@ namespace DigitalCity
                 DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.OxygenPollution, "Pollution warning", "Carbon dioxide has exceeded the threshold of 200 ppm", 2));
         }
 
+        /*
+         * Process road sensor data
+         * Outside temperature <= 0 then show informational notification with snowy icon (priority 0)
+         * Humidity level between 40 and 60 then show informational notification with cloudy icon (priority 0)
+         * Humidity level > 60 then show informational notification with rainy icon (priority 0)
+         * In other case show an informational notification with sunny icon (priority 0)
+         */
         void ProcessRoadSensor(Model.RoadSensor sensor, LocationEventArgs args){
+                //Displays the outside temperature
                 string content = string.Format("The outdoor temperature is {0} degres. ", sensor.currentEnviromentTemperature);
 
                 string imagePath = null;
@@ -261,9 +344,14 @@ namespace DigitalCity
                     notification.imagePath = "sunny";
                 }
                  
-                 DependencyService.Get<INotification>().SendCollapsedNotification(notification);
+                //Show notification
+                DependencyService.Get<INotification>().SendCollapsedNotification(notification);
         }
 
+        /*
+         * Process traffic light sensor data
+         * Displays a warning (priority 1) with the current traffic light state (red or green)
+         */
         void ProcessTrafficLightSensor(Model.TrafficLightSensor sensor, LocationEventArgs args){
                 if(sensor.trafficLightState.Equals("red")){
                     DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.TrafficLight, "Traffic light", "Traffic light is red.", 1));
@@ -273,6 +361,10 @@ namespace DigitalCity
                 }
         }
 
+        /*
+         * Process traffic lane sensor data
+         * Displays a warning (priority 2) when high traffic and average speed < 40 km/h
+         */
         void ProcessTraficLaneSensor(Model.TrafficLaneSensor sensor, LocationEventArgs args){
                 if(sensor.crossingsCounter5Minutes < 20 && sensor.averageSpeed < 40){
                     DependencyService.Get<INotification>().SendDefaultNotification(new Model.Notification(Model.Notification.Type.TrafficJam, "Traffic jam", "There is a traffic jam ahead.", 2));
