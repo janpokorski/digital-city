@@ -152,7 +152,7 @@ namespace DigitalCity
                 return;
             
             //Backend script location
-            string uri = "http://mobiheaven.de/digital-city/index.php?lat=" + args.Latitude.ToString().Replace(",", ".")
+            string uri = "http://localhost:80/backend.php?lat=" + args.Latitude.ToString().Replace(",", ".")
                 + "&long=" + args.Longitude.ToString().Replace(",", ".") + "&radius=";
             
             uri += "200";
@@ -192,7 +192,7 @@ namespace DigitalCity
                 return;
 
             //Backend script location
-            string uri = "http://mobiheaven.de/digital-city/index.php?lat=" + args.Latitude.ToString().Replace(",", ".")
+            string uri = "http://localhost:80/backend.php?lat=" + args.Latitude.ToString().Replace(",", ".")
                 + "&long=" + args.Longitude.ToString().Replace(",", ".") + "&radius=";
 
             uri += "500";
@@ -232,7 +232,7 @@ namespace DigitalCity
                 return;
 
             //Backend script location
-            string uri = "http://mobiheaven.de/digital-city/index.php?lat=" + args.Latitude.ToString().Replace(",", ".")
+            string uri = "http://localhost:80/backend.php?lat=" + args.Latitude.ToString().Replace(",", ".")
                 + "&long=" + args.Longitude.ToString().Replace(",", ".") + "&radius=";
             
             uri += "300";

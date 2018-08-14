@@ -10,11 +10,17 @@ namespace DigitalCity.iOS
 {
     public class NotificationiOS : INotification
     {
+        /*
+         * Empty Contructor
+         */
         public NotificationiOS()
         {
             
         }
 
+        /*
+         * Delete an pending or delivered notification
+         */
         public void DeleteNotification(int id)
         {
             string[] notifyID = { Convert.ToString(id) };
@@ -22,6 +28,9 @@ namespace DigitalCity.iOS
             UNUserNotificationCenter.Current.RemoveDeliveredNotifications(notifyID);
         }
 
+        /*
+         * Ask for Permission to receive notifications
+         */
         public void GetPermissions()
         {
             UNUserNotificationCenter.Current.RequestAuthorization(
@@ -29,6 +38,9 @@ namespace DigitalCity.iOS
                 (approved, error) => { });
         }
 
+        /*
+         * Submit notification with a small icon on the very right
+         */ 
         public void SendCollapsedNotification(DigitalCity.Model.Notification notification)
         {
             var title = notification.title;
@@ -41,6 +53,9 @@ namespace DigitalCity.iOS
             PublishNotification(id, UNContent);
         }
 
+        /*
+         * Submit default notification
+         */ 
         public void SendDefaultNotification(DigitalCity.Model.Notification notification)
         {
             var title = notification.title;
@@ -52,6 +67,9 @@ namespace DigitalCity.iOS
             PublishNotification(id, UNcontent);
         }
 
+        /*
+         * Link up image with notification
+         */ 
         private UNMutableNotificationContent AddImageAttachment(UNMutableNotificationContent content, string image){
             var localUrl = "file://" + NSBundle.MainBundle.PathForResource(image, "png");
             NSUrl url = NSUrl.FromString(localUrl);
@@ -63,6 +81,9 @@ namespace DigitalCity.iOS
             return content;
         }
 
+        /*
+         * Create Context including title and body for notification
+         */
         private UNMutableNotificationContent CreateContent(string title, string content){
             UNMutableNotificationContent UNContent = new UNMutableNotificationContent();
             UNContent.Title = title;
@@ -71,6 +92,9 @@ namespace DigitalCity.iOS
             return UNContent;
         }
 
+        /*
+         * Publish notification to the notification center
+         */
         private void PublishNotification(int id, UNMutableNotificationContent content){
             UNNotificationRequest request = UNNotificationRequest.FromIdentifier(Convert.ToString(id), content, null);
             UNUserNotificationCenter.Current.AddNotificationRequest(request, (err) => { });

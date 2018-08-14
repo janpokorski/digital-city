@@ -18,12 +18,19 @@ using Xamarin.Forms;
 [assembly: Dependency(typeof(LocationManagerAndroid))]
 namespace DigitalCity.Droid
 {
+    /*
+     * Callback class used to get location from the LocationManager
+     */
     public class ClientLocationCallback : LocationCallback
     {
         public ClientLocationCallback(Activity activity)
         {
 
         }
+
+        /*
+         * Called if location service gets unavailable
+         */
         public override void OnLocationAvailability(LocationAvailability locationAvailability)
         {
             if (!locationAvailability.IsLocationAvailable)
@@ -32,6 +39,9 @@ namespace DigitalCity.Droid
             }
         }
 
+        /*
+         * Called if there is a new location update
+         */
         public override void OnLocationResult(LocationResult result)
         {
             LocationManagerAndroid.Manager.OnLocationUpdate(result);
@@ -50,6 +60,8 @@ namespace DigitalCity.Droid
         {
             Manager = this;
             var queryResult = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(CrossCurrentActivity.Current.AppContext);
+
+            //check if Google Service for Location updates is available
             if (queryResult == ConnectionResult.Success)
             {
                 return;
@@ -63,8 +75,14 @@ namespace DigitalCity.Droid
             }
         }
 
+        /*
+         * events that is fired once there is an update of location
+         */
         public event LocationUpdatedEventHandler LocationUpdated;
 
+        /*
+        * Start receiving location updates
+        */
         void ILocationManager.StartLocationUpdates()
         {
             client = LocationServices.GetFusedLocationProviderClient(CrossCurrentActivity.Current.Activity);
@@ -73,6 +91,9 @@ namespace DigitalCity.Droid
             client.RequestLocationUpdatesAsync(request, locationCallback);
         }
 
+        /*
+         * Redirect location updates to the event
+         */
         public void OnLocationUpdate(LocationResult result)
         {
             if(result == null)
@@ -83,11 +104,17 @@ namespace DigitalCity.Droid
             LocationUpdated?.Invoke(this, new LocationEventArgs(result.LastLocation.Longitude, result.LastLocation.Latitude));
         }
 
+        /*
+        * Stop updating location information
+        */
         public void StopLocationUpdates()
         {
             client.RemoveLocationUpdatesAsync(locationCallback);
         }
 
+        /*
+         * Ask for permission to use location service
+         */
         public void GetPermissions()
         {
             if (ContextCompat.CheckSelfPermission(CrossCurrentActivity.Current.AppContext, Manifest.Permission.AccessFineLocation) == Android.Content.PM.Permission.Denied)

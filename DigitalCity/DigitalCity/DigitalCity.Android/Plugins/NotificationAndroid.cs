@@ -17,6 +17,8 @@ namespace DigitalCity.Droid
             //create head-up notification channel
             if(Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
             {
+
+                //create Notification channel
                 string channelID = "Location-based information";
                 Java.Lang.ICharSequence channelName = new Java.Lang.String("Location-based information");
                 NotificationChannel channel = new NotificationChannel(channelID, channelName, NotificationImportance.Max);
@@ -29,16 +31,25 @@ namespace DigitalCity.Droid
 
         }
 
+        /*
+         * Delete an pending or delivered notification
+         */
         public void DeleteNotification(int id)
         {
             manager.Cancel(id);
         }
 
+        /*
+         * Empty because no need for notification permission
+         */
         public void GetPermissions()
         {
             
         }
 
+        /*
+         * Submit notification with a small icon on the very right
+         */
         public void SendCollapsedNotification(DigitalCity.Model.Notification notification)
         {
             var title = notification.title;
@@ -46,12 +57,16 @@ namespace DigitalCity.Droid
             var image = notification.imagePath;
             var id = notification.GetId();
 
+            //create builder and assign image to the notification
             Notification.Builder builder = CreateNotificationBuilder(title, content);
             int imageID = (int)typeof(Resource.Drawable).GetField(image).GetRawConstantValue();
             builder.SetLargeIcon(BitmapFactory.DecodeResource(CrossCurrentActivity.Current.Activity.Resources, imageID));
             PublishNotification(builder, id);
         }
 
+        /*
+         * Submit default notification
+         */
         public void SendDefaultNotification(DigitalCity.Model.Notification notification)
         {
             var title = notification.title;
@@ -63,6 +78,9 @@ namespace DigitalCity.Droid
 
         }
 
+        /*
+         * Submit user-interactive notification (not finished)
+         */
         public void SendExpandedNotification(DigitalCity.Model.Notification notification)
         {
             var title = notification.title;
@@ -76,9 +94,13 @@ namespace DigitalCity.Droid
             PublishNotification(builder, id);
         }
 
+        /*
+        * Create builder and assign title and text to the notification
+        */
         public Notification.Builder CreateNotificationBuilder(string title, string content){
             Notification.Builder builder = null;
 
+            //if version is lower than Android O, priority has to be set manually
             if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
             {
                 builder = new Notification.Builder(CrossCurrentActivity.Current.Activity.ApplicationContext, "Location-based information");
@@ -96,6 +118,9 @@ namespace DigitalCity.Droid
             return builder;
         }
 
+        /*
+         * Publish notification to the notification center
+         */
         public void PublishNotification(Notification.Builder builder, int id){
             Notification notification = builder.Build();
             manager.Notify(id, notification);
